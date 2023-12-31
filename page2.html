@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            /* overflow: hidden; */
+            background-color: black;
+            background-image: url('https://w0.peakpx.com/wallpaper/96/482/HD-wallpaper-amistad-y-amor-corazon-fondo-rojo-love-red-sasukefox.jpg');
+            background-size: contain;
+            background-position: center;
+            height: 100%;
+           background-repeat: no-repeat;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(10%, 1fr)); /* Dynamic columns */
+            gap: 0;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-item {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: black;
+            transition: background-color 0.5s ease; /* Smooth transition effect */
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid-container" id="grid">
+    <!-- JavaScript will dynamically generate the grid items here -->
+</div>
+
+<script>
+    // Define the number of columns (adjust as needed)
+    const numColumns = 20;
+
+    // Get the grid container
+    const gridContainer = document.getElementById('grid');
+
+    // Dynamically generate grid items based on the number of columns
+    for (let i = 0; i < numColumns * numColumns; i++) {
+        const gridItem = document.createElement('div');
+        gridItem.className = 'grid-item';
+        gridItem.onmouseover = function() {
+            revealImage(this);
+        };
+        gridContainer.appendChild(gridItem);
+    }
+
+    function revealImage(element) {
+        // Simulate loading the image portion
+        element.style.backgroundImage = "none";
+        // Change the background color to transparent to reveal the image
+        element.style.backgroundColor = "transparent";
+    }
+</script>
+
+</body>
+</html>
